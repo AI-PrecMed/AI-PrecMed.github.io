@@ -1,7 +1,589 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
-<body>
-<h1>Hello World</h1>
-<p>I'm hosted with GitHub Pages.</p>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0">
+  <meta name="description" content="Workshop on Foundation Models for Bioinformatics and Biomedicine">
+  <meta name="author" content="">
+  <title>AI4PM 2025</title>
+
+  <!-- Bootstrap core CSS -->
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Custom Google Web Font -->
+  <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700,900,100italic,300italic,400italic,700italic,900italic" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Arvo:400,700" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+
+  <!-- Custom CSS-->
+  <link href="css/general.css" rel="stylesheet">
+
+  <!-- Owl-Carousel -->
+  <link href="css/custom.css" rel="stylesheet">
+  <link href="css/owl.carousel.css" rel="stylesheet">
+  <link href="css/owl.theme.css" rel="stylesheet">
+  <link href="css/style.css" rel="stylesheet">
+  <link href="css/animate.css" rel="stylesheet">
+
+  <!-- Magnific Popup core CSS file -->
+  <link rel="stylesheet" href="css/magnific-popup.css">
+  <script src="js/modernizr-2.8.3.min.js"></script> <!-- Modernizr /-->
+
+  <style>
+    /* Enhanced styling */
+    body {
+      font-family: 'Lato', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+      font-weight: 300;
+      color: #333;
+      background-color: #fff;
+    }
+    
+    .intro-header {
+      background-image: linear-gradient(rgba(59, 89, 152, 0.8), rgba(59, 89, 152, 0.9)), url("img/bg-banner.jpg");
+      background-position: center;
+      background-size: cover;
+      padding-top: 30px;
+      padding-bottom: 30px;
+      max-height: 200px;
+      position: relative;
+    }
+    
+    .abcen1 {
+      position: relative;
+      top: -15px;
+    }
+    
+    .h1_home {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+    }
+    
+    .h3_home {
+      font-weight: 300;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+    
+    .section-heading {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+      color: #3a5199;
+      margin-bottom: 25px;
+      position: relative;
+      padding-bottom: 15px;
+    }
+    
+    .section-heading:after {
+      content: '';
+      display: block;
+      width: 80px;
+      height: 3px;
+      background-color: #5c85d6;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+    }
+    
+    .content-section-a, .content-section-b {
+      padding: 80px 0;
+    }
+    
+    .content-section-a {
+      background-color: #ffffff;
+    }
+    
+    .content-section-b {
+      background-color: #f8f9fa;
+    }
+    
+    .lead {
+      font-size: 18px;
+      font-weight: 300;
+      line-height: 1.8;
+      margin-bottom: 20px;
+    }
+    
+    .navbar-default {
+      background-color: #fff;
+      border-color: transparent;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+    
+    .navbar-default .navbar-brand {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+      color: #3a5199;
+    }
+    
+    .navbar-default .navbar-nav > li > a {
+      color: #555;
+      font-weight: 500;
+      letter-spacing: 0.5px;
+    }
+    
+    table {
+      border-collapse: collapse;
+      line-height: 2;
+      width: 100%;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      border-radius: 8px;
+      overflow: hidden;
+      margin-bottom: 40px;
+    }
+    
+    th, td {
+      padding: 15px;
+      text-align: left;
+      border-bottom: 1px solid #e9ecef;
+    }
+    
+    th {
+      background-color: #3a5199;
+      color: white;
+      font-weight: 500;
+      letter-spacing: 0.5px;
+    }
+    
+    tr:nth-child(even) {
+      background-color: #f2f2f2;
+    }
+    
+    tr:hover {
+      background-color: #e9ecef;
+    }
+    
+    ul {
+      padding-left: 0;
+      margin-left: 0;
+      list-style-type: none;
+    }
+    
+    li {
+      padding: 10px 0;
+      position: relative;
+      padding-left: 25px;
+      font-size: 16px;
+    }
+    
+    li:before {
+      content: "•";
+      color: #3a5199;
+      font-size: 20px;
+      position: absolute;
+      left: 0;
+      top: 7px;
+    }
+    
+    .organizer-card {
+      padding: 30px;
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      margin-bottom: 30px;
+    }
+    
+    .organizer-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+    }
+    
+    .img-circle {
+      border: 4px solid #f8f9fa;
+      box-shadow: 0 0 15px rgba(0,0,0,0.1);
+      transition: transform 0.5s ease;
+    }
+    
+    .img-circle:hover {
+      transform: scale(1.05);
+    }
+    
+    footer {
+      background-color: #3a5199;
+      color: white;
+      padding: 25px 0;
+    }
+    
+    footer h5 {
+      font-weight: 300;
+      letter-spacing: 1px;
+    }
+    
+    .schedule {
+      background-color: white;
+      padding: 30px;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+    
+    .button_down a {
+      background-color: rgba(255,255,255,0.2);
+      border: 2px solid #fff;
+    }
+    
+    .timeline {
+      position: relative;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 20px 0;
+    }
+    
+    .timeline-item {
+      padding: 10px 40px;
+      position: relative;
+      background-color: inherit;
+      width: 50%;
+      left: 0;
+    }
+    
+    .timeline-item::after {
+      content: '';
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      right: -10px;
+      background-color: white;
+      border: 4px solid #3a5199;
+      top: 15px;
+      border-radius: 50%;
+      z-index: 1;
+    }
+    
+    .timeline-content {
+      padding: 20px;
+      background-color: white;
+      position: relative;
+      border-radius: 6px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+    
+    .keynote-speaker {
+      background-color: white;
+      border-radius: 10px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+      padding: 30px;
+      margin-bottom: 30px;
+      transition: transform 0.3s ease;
+    }
+    
+    .keynote-speaker:hover {
+      transform: translateY(-5px);
+    }
+    
+    .personal-website {
+      margin-top: 10px;
+      display: inline-block;
+      color: #3a5199;
+      text-decoration: none;
+      font-weight: 400;
+      border-bottom: 1px dashed #3a5199;
+      transition: all 0.3s ease;
+    }
+    
+    .personal-website:hover {
+      color: #5c85d6;
+      border-bottom: 1px solid #5c85d6;
+      text-decoration: none;
+    }
+    
+    .submission-link {
+      display: inline-block;
+      background-color: #3a5199;
+      color: white;
+      padding: 12px 25px;
+      border-radius: 30px;
+      text-decoration: none;
+      font-weight: 500;
+      margin-top: 20px;
+      box-shadow: 0 4px 10px rgba(58, 81, 153, 0.3);
+      transition: all 0.3s ease;
+    }
+    
+    .submission-link:hover {
+      background-color: #5c85d6;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 15px rgba(58, 81, 153, 0.4);
+      text-decoration: none;
+      color: white;
+    }
+    
+    .submission-link i {
+      margin-right: 8px;
+    }
+    
+    .previous-workshop {
+      display: inline-block;
+      color: #3a5199;
+      font-weight: 500;
+      text-decoration: none;
+      border-bottom: 1px solid #3a5199;
+      transition: all 0.3s ease;
+    }
+    
+    .previous-workshop:hover {
+      color: #5c85d6;
+      border-bottom: 1px solid #5c85d6;
+    }
+    
+    .previous-workshop i {
+      margin-right: 5px;
+    }
+  </style>
+</head>
+
+<body id="home">
+
+<!-- Preloader -->
+<div id="preloader">
+  <div id="status"></div>
+</div>
+
+<!-- FullScreen -->
+<div class="intro-header">
+  <div class="col-xs-12 text-center abcen1">
+    <h1 class="h1_home wow fadeIn" data-wow-delay="0.4s" style="font-size: 1.7em; margin-top: 0; margin-bottom: 5px;">The 7th International Workshop on <br /> Artificial Intelligence for <br />  Precision Medicine (AI4PM 2025)  <br /> Wuhan, China</h1>
+
+    <h3 class="h3_home wow fadeIn" data-wow-delay="0.6s" style="font-size: 1em; margin-top: 5px;">December 15-18, 2025 <br />  held in conjunction with IEEE BIBM 2025</h3>
+  </div>
+  <!-- /.container -->
+  <!-- <div class="col-xs-12 text-center abcen wow fadeIn">
+    <div class="button_down" style="margin-top: 0;"> <a class="imgcircle wow bounceInUp" data-wow-duration="1.5s"  href="#about"> <img class="img_scroll" src="img/icon/circle.png" alt="Go down to content"> </a> </div>
+  </div> -->
+</div>
+
+<!-- NavBar-->
+<nav class="navbar-default" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
+      <a class="navbar-brand" href="https://biod.whu.edu.cn/bibm2025/Workshops.htm" target="_blank">BIBM 2025 Workshop</a> </div>
+    <div class="collapse navbar-collapse navbar-right navbar-ex1-collapse">
+      <ul class="nav navbar-nav">
+        <li class="menuItem"><a href="#about">Overview</a></li>
+        <li class="menuItem"><a href="#topics">Research Topics</a></li>
+        <li class="menuItem"><a href="#schedule">Important Dates</a></li>
+        <li class="menuItem"><a href="#organizers">Organizers</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- About -->
+<div id="about" class="content-section-a" style="border-top: 0">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12 wow fadeInLeftBig" data-animation-delay="200">
+        <h3 class="section-heading">Workshop Overview</h3>
+        <p class="lead">The rapid development of foundation models, particularly large language models (LLMs), has significantly advanced the capabilities of artificial intelligence in healthcare. In parallel, the increasing availability of diverse biomedical data types—ranging from medical imaging and genomics to electronic health records and wearable sensor streams—has underscored the importance of multimodal learning and fusion in achieving personalized and precise medicine.</p>
+        <p class="lead">This workshop focuses on multimodal foundation models for precision medicine, with an emphasis on the modeling, fusion, and interpretation of heterogeneous biomedical data. We aim to explore how recent advances in multimodal LLMs, vision-language pretraining, cross-modal fusion strategies, and domain knowledge integration can improve clinical decision-making, disease prediction, and treatment personalization. Key challenges such as aligning modalities with disparate semantics, ensuring interpretability, and managing privacy will also be central to our discussion.</p>
+        <p class="lead">By bringing together experts from AI, biomedical informatics, and clinical science, the 7th International Workshop on Artificial Intelligence for Precision Medicine will serve as a focused platform for interdisciplinary exchange and showcasing innovations in multimodal model development and deployment in real-world healthcare settings.</p>
+        <!-- <p class="lead">Following the success of our first workshop in 2024, we are excited to present the 2nd International Workshop on Foundation Models for Bioinformatics and Biomedicine. You can visit <a href="https://fmbb2024.github.io" target="_blank" class="previous-workshop"><i class="fa fa-external-link"></i>the FMBB 2024 website</a> to view the previous proceedings and presentations. The workshop will be conducted in a fully virtual format via Zoom to facilitate seamless interaction, presentations, and discussions among participants worldwide.</p> -->
+        <p class="lead">The workshop is held in conjunction with IEEE International Conference on Bioinformatics and Biomedicine 2025 (BIBM, CCF rank B). Accepted papers will be included in the corresponding proceedings.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="topics" class="content-section-b">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12 wow fadeInLeftBig" data-animation-delay="200">
+        <h3 class="section-heading">Topics of Interest</h3>
+        <div class="row">
+          <div class="col-md-6">
+            <ul>
+              <li>Multimodal foundation models for biomedical and clinical tasks</li>
+              <li>Vision-language models and LLMs in digital pathology and radiology</li>
+              <li>Cross-modal fusion strategies for integrating EHRs, genomics, and sensor data</li>
+              <li>Multimodal representation learning for clinical prediction and patient stratification</li>
+              <li>Prompt-based or retrieval-augmented approaches for multimodal medical reasoning</li>
+              <li>Efficient fine-tuning and adaptation of large multimodal models in healthcare</li>
+              <li>Benchmarking and evaluation protocols for multimodal foundation models</li>
+              <li>Knowledge-guided or ontology-aware multimodal learning</li>
+              <li>Secure and privacy-preserving multimodal model deployment</li>
+              <li>Challenges in model interpretability and trustworthiness for clinical use</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Schedule -->
+<div id="schedule" class="content-section-a">
+  <div class="container">
+    <h3 class="section-heading">Important Dates</h3>
+      
+    <table id="timeTable">
+      <tr>
+        <th style="width:35%;">Date</th>
+        <th style="width:auto;">Event</th>
+      </tr>
+
+      <tr>
+        <td>June 1, 2025</td>
+        <td>Workshop website open and call for papers announcement</td>
+      </tr>
+
+      <tr>
+        <td>August 1, 2025</td>
+        <td>Submission system opens</td>
+      </tr>
+
+      <tr>
+        <td>October 15, 2025</td>
+        <td>Due date for full workshop papers submission</td>
+      </tr>
+
+      <tr>
+        <td>November 10, 2025</td>
+        <td>Notification of paper acceptance to authors</td>
+      </tr>
+
+      <tr>
+        <td>November 23, 2025</td>
+        <td>Camera-ready deadline for accepted papers</td>
+      </tr>
+
+      <tr>
+        <td>December 15-18, 2025</td>
+        <td>Workshop dates, Hybrid (Onsite + Online)</td>
+      </tr>
+    </table>
+
+    <div class="text-center">
+      <a href="https://wi-lab.com/cyberchair/2025/bibm25/index.php" target="_blank" class="submission-link">
+        <i class="fa fa-paper-plane"></i> Paper Submission System
+      </a>
+    </div>
+
+    <div class="schedule" style="margin-top: 40px;">
+      <h3>Workshop Schedule</h2>
+      <p>The detailed presentation schedule will be announced after the paper acceptance notifications. The program will include paper presentations, invited talks, and interactive discussions focused on Artificial Intelligence for Precision Medicine.</p>
+    </div>
+      
+  </div>
+</div>
+
+<div id="organizers" class="content-section-b" style="border-top: 0">
+  <div class="container">
+    <h3 class="section-heading">Organizers</h3>
+    <div class="row">
+      <div class="col-sm-6">
+        <div class="organizer-card wow fadeInUp" data-animation-delay="100">
+          <h4 class="text-center"><a target="_blank" style="text-decoration: none; color: #3a5199;">Jialun Wu</a></h4>
+          <center>
+            <img class="img-responsive img-circle" height="150px" width="140px" src="img/organizer/jialun.jpg" alt="Jialun Wu">
+            <h5 class="text-center">Northwestern Polytechnical University</h5>
+            <p class="text-center" style="margin-top: 10px;"><a href="mailto:jialunwu@nwpu.edu.cn">jialunwu@nwpu.edu.cn</a></p>
+          </center>
+        </div>
+      </div>
+      <!-- <div class="col-sm-6">
+        <div class="organizer-card wow fadeInUp" data-animation-delay="200">
+          <h4 class="text-center"><a target="_blank" style="text-decoration: none; color: #3a5199;">Zeyu Gao</a></h4>
+          <center>
+            <img class="img-responsive img-circle" height="150px" width="150px" src="img/organizer/kai.jpg" alt="Zeyu Gao">
+            <h5 class="text-center">University of Cambridge</h5>
+            <p class="text-center" style="margin-top: 10px;"><a href="mailto:zg323@cam.ac.uk">zg323@cam.ac.uk</a></p>
+          </center>
+        </div>
+      </div> -->
+      <div class="col-sm-6">
+        <div class="organizer-card wow fadeInUp" data-animation-delay="300">
+          <h4 class="text-center"><a target="_blank" style="text-decoration: none; color: #3a5199;">Kai He</a></h4>
+          <center>
+            <img class="img-responsive img-circle" height="150px" width="150px" src="img/organizer/kai.jpg" alt="Kai He">
+            <h5 class="text-center">National University of Singapore</h5>
+            <p class="text-center" style="margin-top: 10px;"><a href="mailto:kai_he@nus.edu.sg">kai_he@nus.edu.sg</a></p>
+          </center>
+        </div>
+      </div>
+      <div class="col-sm-6">
+        <div class="organizer-card wow fadeInUp" data-animation-delay="400">
+          <h4 class="text-center"><a target="_blank" style="text-decoration: none; color: #3a5199;">Qika Lin</a></h4>
+          <center>
+            <img class="img-responsive img-circle" height="150px" width="150px" src="img/organizer/qika.jpg" alt="Qika Lin">
+            <h5 class="text-center">National University of Singapore</h5>
+            <p class="text-center" style="margin-top: 10px;"><a href="mailto:linqika@nus.edu.sg">linqika@nus.edu.sg</a></p>
+          </center>
+        </div>
+      </div>
+      <!-- <div class="col-sm-6">
+        <div class="organizer-card wow fadeInUp" data-animation-delay="500">
+          <h4 class="text-center"><a target="_blank" style="text-decoration: none; color: #3a5199;">Ines Machado</a></h4>
+          <center>
+            <img class="img-responsive img-circle" height="150px" width="150px" src="img/organizer/kai.jpg" alt="Ines Machado">
+            <h5 class="text-center">University of Cambridge</h5>
+            <p class="text-center" style="margin-top: 10px;"><a href="mailto:im549@cam.ac.uk">im549@cam.ac.uk</a></p>
+          </center>
+        </div>
+      </div> -->
+    </div>
+
+    <h3 class="section-heading" style="margin-top: 60px;">Program Committee</h3>
+    <div class="row">
+      <div class="col-md-12">
+        <div class="organizer-card">
+          <ul>
+            <li><strong>Prof. Mengling Feng</strong> (NUS Saw Swee Hock School of Public Health, Singapore)</li>
+            <li><strong>Prof. Mireia Crispin-Ortuzar</strong> (University of Cambridge, UK)</li>
+            <li><strong>Weimiao Yu</strong> (Agency for Science, Technology and Research (A*STAR), Singapore)</li>
+            <li><strong>Xiaoyan Cai</strong> (Northwestern Polytechnical University, China)</li>
+            <li><strong>Chen Li</strong> (Xi’an Jiaotong University, China)</li>
+            <li><strong>Tieliang Gong</strong> (Xi’an Jiaotong University, China)</li>
+            <li><strong>Dr. Rui Mao</strong> (Nanyang Technological University, Singapore)</li>
+            <li><strong>Dr. Xin Mei</strong> (Northwestern Polytechnical University, China)</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="schedule" style="margin-top: 40px;">
+      <h4>We look forward to receiving your submissions and are excited about a productive and insightful workshop at the IEEE BIBM 2025 Conference! </h4>
+    </div>
+
+  
+  </div>
+</div>
+
+<footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12 text-center" id="contact">
+        <h5>© The 7th International Workshop on Artificial Intelligence for Precision Medicine (AI4PM 2025)</h5>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- JavaScript -->
+<script src="js/jquery-1.10.2.js"></script>
+<script src="js/bootstrap.js"></script>
+<script src="js/owl.carousel.js"></script>
+<script src="js/script.js"></script>
+<!-- StikyMenu -->
+<script src="js/stickUp.min.js"></script>
+<script type="text/javascript">
+  jQuery(function($) {
+    $(document).ready( function() {
+      $('.navbar-default').stickUp();
+    });
+  });
+</script>
+<!-- Smoothscroll -->
+<script type="text/javascript" src="js/jquery.corner.js"></script>
+<script src="js/wow.min.js"></script>
+<script>
+ new WOW().init();
+</script>
+<script src="js/classie.js"></script>
+<!-- Magnific Popup core JS file -->
+<script src="js/jquery.magnific-popup.js"></script>
 </body>
 </html>
